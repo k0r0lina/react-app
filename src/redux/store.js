@@ -3,11 +3,14 @@ import initialState from './initialState';
 import shortid from 'shortid';
 import strContains from '../utils/strContains';
 
-//selectors
+// selectors
 export const getFilteredCards = ({ cards, searchString }, columnId) => cards
   .filter(card => card.columnId === columnId && strContains(card.title, searchString));
 
-export const getAllColumns = ((state => state.columns));
+export const getAllLists = ((state => state.lists));
+
+export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId)
+export const getColumnsByList = (state, listId) => state.columns.filter(column => column.listId === listId);
 
 // action creators
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
