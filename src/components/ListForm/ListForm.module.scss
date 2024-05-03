@@ -1,0 +1,16 @@
+.columnForm {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+label {
+    padding: 10px;
+}
+
+@media (max-width: 767px) {
+    .columnForm {
+        text-align: center;
+        flex-direction: column;
+    }
+  }
